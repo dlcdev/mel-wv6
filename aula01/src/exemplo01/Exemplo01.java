@@ -8,7 +8,7 @@ public class Exemplo01 {
 
         numero = (12 + 3) * 5;
 
-        System.out.println("Resultado = " + numero); //co  ncatenação
+        System.out.println("Resultado = " + numero);
 
         for (int i = 0; i < 10; i++) {
             System.out.println("Test" + i);
