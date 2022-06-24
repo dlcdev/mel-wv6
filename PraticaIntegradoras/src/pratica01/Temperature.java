@@ -19,7 +19,7 @@ public class Temperature {
                 "Lisboa",
                 "Tokio",
         };
-        int [][] temperature = {
+        int[][] temperature = {
                 {-2, 33},
                 {-3, 32},
                 {-8, 27},
@@ -32,14 +32,14 @@ public class Temperature {
                 {-10, 35},
         };
 
-        for (int i = 0; i < temperature.length ; i++) {
+        for (int i = 0; i < temperature.length; i++) {
 
             if (temperature[i][0] <= lowerTemp) {
                 lowerTemp = temperature[i][0];
                 lowerCit = cit[i];
             }
 
-            if (temperature[i][1] >= higherTemp){
+            if (temperature[i][1] >= higherTemp) {
                 higherTemp = temperature[i][1];
                 higherCit = cit[i];
             }
