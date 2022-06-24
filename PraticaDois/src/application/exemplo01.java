@@ -8,6 +8,7 @@ public class exemplo01 {
 
         System.out.println(livro.nome);
         System.out.println(livro.autor);
+
     }
 }
 
