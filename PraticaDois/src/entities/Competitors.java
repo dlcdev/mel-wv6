@@ -1,6 +1,17 @@
 package entities;
 
+
+import java.util.List;
+
 public class Competitors {
+
+    private static final Double MINIMUM_VALUE_AGE = 1300.00;
+    private static final double MAXIMUM_VALUE_AGE = 1500.00;
+    private static final double MINIMUM_MEDIUM_VALUE_AGE = 2000.00;
+    private static final double MAXIMUM_MEDIUM_VALUE_AGE = 2300.00;
+    private static final double MAXIMUM_ADVANCED_VALUE_AGE = 2800.00;
+
+    private Integer number;
     private String name;
     private Integer age;
     private Integer document;
@@ -9,7 +20,12 @@ public class Competitors {
     private String bloodGroup;
     private double subscription;
 
+    public Competitors() {
+
+    }
+
     public Competitors(
+            Integer number,
             String name,
             Integer age,
             Integer document,
@@ -18,7 +34,7 @@ public class Competitors {
             String bloodGroup,
             double subscription
     ) {
-
+        this.number = number;
         this.name = name;
         this.age = age;
         this.document = document;
@@ -26,6 +42,14 @@ public class Competitors {
         this.phoneEmergency = phoneEmergency;
         this.bloodGroup = bloodGroup;
         this.subscription = subscription;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
     public String getName() {
@@ -84,16 +108,48 @@ public class Competitors {
         this.subscription = subscription;
     }
 
+    public static double getTheRegistrationFee(int choice, int age, int minimumAge) {
+        // Get The Registration Fee
+
+        return switch (choice) {
+            case 1 -> age < minimumAge ? MINIMUM_VALUE_AGE : MAXIMUM_VALUE_AGE;
+            case 2 -> age < minimumAge ? MINIMUM_MEDIUM_VALUE_AGE : MAXIMUM_MEDIUM_VALUE_AGE;
+            case 3 -> MAXIMUM_ADVANCED_VALUE_AGE;
+            default -> {
+                Double o = null;
+                yield o;
+            }
+        };
+    }
+
+    public static boolean isParticipantExists(String name, List<Competitors> listCompetitors) {
+        // Check this Participant Exists.
+
+        if (listCompetitors.isEmpty()) {
+            return false;
+        }
+        for (Competitors competitors : listCompetitors) {
+            if (competitors.getName().toLowerCase().strip().equals(name.toLowerCase().strip())) {
+                System.out.printf("This competitor: %s exist in data base.", name);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Name: " + name);
-        sb.append(" - age: " + age);
-        sb.append(" - document: " + document);
-        sb.append(" - Phone Number: " + phoneNumber);
-        sb.append(" - Phone Emergency: " + phoneEmergency);
-        sb.append(" - Blood Group: " + bloodGroup);
-        sb.append(" - Subscription: " + subscription);
+        sb.append("Number: " + number);
+        sb.append(" | Name: " + name);
+        sb.append(" | age: " + age);
+        sb.append(" | document: " + document);
+        sb.append(" | Phone Number: " + phoneNumber);
+        sb.append(" | Phone Emergency: " + phoneEmergency);
+        sb.append(" | Blood Group: " + bloodGroup);
+        sb.append(" | Subscription: " + subscription);
         return sb.toString();
 
     }
