@@ -63,7 +63,7 @@ public class JungleRun {
 
         }
 
-        System.out.println("List of participants and the values to ");
+        System.out.println("List of participants and registration fees.");
         for (Competitors competitors : list) {
             System.out.println(competitors);
         }
