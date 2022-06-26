@@ -32,7 +32,7 @@ public class JungleRun {
             System.out.print("1 - small | 2 - medium | 3 - advanced: ");
             int choice = sc.nextInt();
             sc.nextLine();
-            
+
             System.out.println("Enter name: ");
             String name = sc.nextLine();
 
