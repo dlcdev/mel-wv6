@@ -1,9 +1,9 @@
 package models;
 
-public class Report extends Document{
+public class Report extends Document {
 
-    private Integer textSize;
-    private Integer pageNumber;
+    private int textSize;
+    private int pageNumber;
     private String author;
     private String reviewer;
 
@@ -15,11 +15,11 @@ public class Report extends Document{
         this.reviewer = reviewer;
     }
 
-    public Integer getText() {
+    public Integer getTextSize() {
         return textSize;
     }
 
-    public void setText(Integer text) {
+    public void setTextSize(Integer text) {
         this.textSize = text;
     }
 

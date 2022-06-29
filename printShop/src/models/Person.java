@@ -4,17 +4,17 @@ import java.util.List;
 
 public class Person extends Document {
     private String name;
-    private Integer document;
+    private int document;
     private String address;
-    private Integer houseNumber;
+    private int houseNumber;
     private List<String> attributes;
 
     public Person(
             String typeDocument,
             String name,
-            Integer document,
+            int document,
             String address,
-            Integer houseNumber,
+            int houseNumber,
             List<String> attributes
     ) {
         super(typeDocument);
@@ -61,9 +61,9 @@ public class Person extends Document {
         return attributes;
     }
 
-//    public void setAttributes(List<String> attributes) {
-//        this.attributes = attributes;
-//    }
+    public void setAttributes(List<String> attributes) {
+        this.attributes = attributes;
+    }
 
     public void addAttributes(String attribute) {
         attributes.add(attribute);

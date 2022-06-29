@@ -3,7 +3,7 @@ package models;
 public abstract class Document {
     private String typeDocument;
 
-    public Document(String typeDocument) {
+    protected Document(String typeDocument) {
         this.typeDocument = typeDocument;
     }
 

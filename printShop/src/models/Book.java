@@ -1,14 +1,14 @@
 package models;
 
-public class Book extends Document{
+public class Book extends Document {
 
 
     private String title;
     private String authorName;
     private String genre;
-    private Integer pageNumber;
+    private int pageNumber;
 
-    public Book(String typeDocument, String title, String authorName, String genre, Integer pageNumber) {
+    public Book(String typeDocument, String title, String authorName, String genre, int pageNumber) {
         super(typeDocument);
         this.title = title;
         this.authorName = authorName;
