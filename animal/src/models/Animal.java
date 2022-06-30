@@ -3,7 +3,7 @@ package models;
 public abstract class Animal {
     private String name;
 
-    public Animal(String name) {
+    protected Animal(String name) {
         this.name = name;
     }
 
@@ -16,5 +16,7 @@ public abstract class Animal {
     }
 
     public abstract void emitSound();
+
+    public abstract void eatAnimal();
 
 }

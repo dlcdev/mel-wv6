@@ -1,5 +1,7 @@
 package utils;
 
-public interface Food {
+import models.Animal;
 
+public interface Food {
+    public void eat(Animal animal);
 }
