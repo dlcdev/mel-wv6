@@ -5,7 +5,7 @@ public class Main {
 
         List<Pessoa> pessoas = Dados.getPessoas();
         // Listar todas as pessoas
-        // pessoas.stream().forEach(System.out::println);
+         pessoas.stream().forEach(System.out::println);
 
         // Listar as 10 primeiras pessoas
         //pessoas.stream()
@@ -44,11 +44,11 @@ public class Main {
 //        System.out.println("Pessoas com mais de 45 anos: " + quantidade);
 
         // Média de idade das pessoas
-        double media = pessoas.stream()
-                .mapToDouble(p -> p.getIdade())
-                .average().getAsDouble();
-
-        System.out.println("Média de idade: " + media);
+//        double media = pessoas.stream()
+//                .mapToDouble(p -> p.getIdade())
+//                .average().getAsDouble();
+//
+//        System.out.println("Média de idade: " + media);
 
         // end
     }
