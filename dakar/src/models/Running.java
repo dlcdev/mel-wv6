@@ -1,8 +1,7 @@
 package models;
 
 import java.util.List;
-import java.awt.*;
-import java.util.stream.Collectors;
+import java.util.OptionalDouble;
 
 public class Running {
     private double distance;
@@ -65,8 +64,8 @@ public class Running {
     }
 
     public void removeVehicleWithBoard(String board) {
-        for(Vehicle vehicle : vehicles) {
-            if(vehicle.getBoard().equals(board)) {
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.getBoard().equals(board)) {
                 vehicles.remove(vehicle);
             }
         }
@@ -75,22 +74,25 @@ public class Running {
 
     /**
      * double purchaseTotal = items.stream()
-     *                 .mapToDouble(p -> p.getCostProduct() * p.getQuantityProduct())
-     *                 .sum();
-     *
-     *  Velocidade * 1⁄2 Aceleração / (anguloRotacao* (peso - quantidadeRodas *
+     * .mapToDouble(p -> p.getCostProduct() * p.getQuantityProduct())
+     * .sum();
+     * <p>
+     * Velocidade * 1⁄2 Aceleração / (anguloRotacao* (peso - quantidadeRodas *
      * 100)
-     *
      */
 
-    public String reaceWinner() {
+    public OptionalDouble reaceWinner() {
 
 
+        OptionalDouble max = vehicles.stream()
+                .mapToDouble(p -> (
+                                (p.getVelocity() * p.getAcceleration() / 2) / (p.getTurningAngle() * (p.getWeight() - p.getWeight()
+                                ))
+                        )
+                )
+                .max();
 
-        vehicles.stream()
-                .mapToDouble(p -> (p.getVelocity() * p.getAcceleration()))
-                .sum();
-
+        return max;
 
     }
 }
