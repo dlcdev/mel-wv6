@@ -1,21 +1,26 @@
 [ {
   "placa" : "ABC 1234",
   "modelo" : "Fusca",
-  "valor" : 23000.0
+  "valor" : 23000.0,
+  "id_proprietario": 1
 }, {
   "placa" : "ABC 4321",
   "modelo" : "Opala",
-  "valor" : 11000.0
+  "valor" : 11000.0,
+  "id_proprietario": 2
 }, {
   "placa" : "xyz 9988",
   "modelo" : "Civic",
-  "valor" : 5000.0
+  "valor" : 5000.0,
+  "id_proprietario": 3
 }, {
   "placa" : "xyz 9988",
   "modelo" : "Civic",
-  "valor" : 25000.0
+  "valor" : 25000.0,
+  "id_proprietario": 4
 }, {
   "placa" : "xyz 9988",
   "modelo" : "Civic",
-  "valor" : 4000.0
+  "valor" : 4000.0,
+  "id_proprietario": 4
 } ]

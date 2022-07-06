@@ -1,0 +1,22 @@
+[
+  {
+  "id" : 1,
+  "nome" : "Fusca",
+  "telefone" : 23000.0
+ },
+  {
+    "id" : 2,
+    "nome" : "Fusca",
+    "telefone" : 23000.0
+  },
+  {
+    "id" : 3,
+    "nome" : 4,
+    "telefone" : 23000.0,
+  },
+  {
+    "id" : "ABC 1234",
+    "nome" : "Fusca",
+    "telefone" : 23000.0
+  }
+]
