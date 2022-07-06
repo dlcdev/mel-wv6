@@ -1,17 +1,21 @@
-[
-  {
-    "placa": "ABC 1234",
-    "modelo": "Fusca",
-    "valor": 13000.0
-  },
-  {
-    "placa": "ABC 4321",
-    "modelo": "Opala",
-    "valor": 31000.0
-  },
-  {
-    "placa": "xyz 9988",
-    "modelo": "Civic",
-    "valor": 45000.0
-  }
-]
+[ {
+  "placa" : "ABC 1234",
+  "modelo" : "Fusca",
+  "valor" : 23000.0
+}, {
+  "placa" : "ABC 4321",
+  "modelo" : "Opala",
+  "valor" : 11000.0
+}, {
+  "placa" : "xyz 9988",
+  "modelo" : "Civic",
+  "valor" : 5000.0
+}, {
+  "placa" : "xyz 9988",
+  "modelo" : "Civic",
+  "valor" : 25000.0
+}, {
+  "placa" : "xyz 9988",
+  "modelo" : "Civic",
+  "valor" : 4000.0
+} ]

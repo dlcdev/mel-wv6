@@ -1,7 +1,6 @@
 package com.dh.meli.spring02.repository;
 
 import com.dh.meli.spring02.exception.NotFoundException;
-import com.dh.meli.spring02.exception.NotFoundExceptionDetails;
 import com.dh.meli.spring02.model.Veiculo;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
