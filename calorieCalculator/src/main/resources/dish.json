@@ -1,0 +1,23 @@
+[ {
+  "id" : 1,
+  "dishName" : "Salad",
+  "ingredientsList" : [ {
+    "name" : "Aceitunas negras",
+    "calories" : 349
+  }, {
+    "name" : "Aceitunas verdes",
+    "calories" : 132
+  } ],
+  "totalCalories" : 481.0
+}, {
+  "id" : 1,
+  "dishName" : "Salad2",
+  "ingredientsList" : [ {
+    "name" : "Aceitunas negras",
+    "calories" : 349
+  }, {
+    "name" : "Aceitunas verdes",
+    "calories" : 132
+  } ],
+  "totalCalories" : 481.0
+} ]

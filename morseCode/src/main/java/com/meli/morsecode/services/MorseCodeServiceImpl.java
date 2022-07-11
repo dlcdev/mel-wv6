@@ -21,7 +21,7 @@ public class MorseCodeServiceImpl implements MorseCodeService {
             List<String> morseCodeList = List.of(morseCode.split(" "));
             List<MorseCode> morseCodeListData = repo.getAllMoserCode();
 
-            String translateCode = "";
+            String translateCode = " ";
 
             for (String listMorse : morseCodeList) {
                 translateCode += morseCodeListData.stream()
