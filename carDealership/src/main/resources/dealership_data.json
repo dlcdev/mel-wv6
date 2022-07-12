@@ -1,0 +1,53 @@
+[
+  {
+    "brand": "Chevrolet",
+    "model": "Corsa",
+    "manufacturingDate": "2000-11-20",
+    "numberOfKilometers": 115000,
+    "doors": 5,
+    "price": 9000.00,
+    "currency": "AR",
+    "countOfOwners": 2,
+    "services": [
+      {
+        "date": "2003-05-20",
+        "kilometers": 60000,
+        "descriptions": "Change air filters"
+      }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "model": "Fiesta",
+    "manufacturingDate": "2002-11-20",
+    "numberOfKilometers": 1335000,
+    "doors": 5,
+    "price": 19000.00,
+    "currency": "AR",
+    "countOfOwners": 1,
+    "services": [
+      {
+        "date": "2003-05-20",
+        "kilometers": 60000,
+        "descriptions": "Change air filters"
+      }
+    ]
+  },
+  {
+    "brand": "Fiat",
+    "model": "Marea",
+    "manufacturingDate": "2000-11-20",
+    "numberOfKilometers": 235000,
+    "doors": 5,
+    "price": 900.00,
+    "currency": "AR",
+    "countOfOwners": 3,
+    "services": [
+      {
+        "date": "2004-05-20",
+        "kilometers": 160000,
+        "descriptions": "Change motor"
+      }
+    ]
+  }
+]

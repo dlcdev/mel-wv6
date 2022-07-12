@@ -1,7 +1,6 @@
 package com.dh.meli.calorycalculator.repository;
 
 import com.dh.meli.calorycalculator.model.Dish;
-import com.dh.meli.calorycalculator.model.Ingredients;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;

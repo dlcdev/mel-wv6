@@ -22,8 +22,6 @@ public class DishServiceImpl implements DishService{
     @Autowired
     private IngredientesRepo ingredientesRepo;
 
-
-
     @Override
     public List<Dish> getAllDish() throws IOException {
         return dishRepo.getAllDish();
