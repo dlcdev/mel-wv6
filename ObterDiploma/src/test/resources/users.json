@@ -1,1 +1,19 @@
-[]
+[ {
+  "id" : 1,
+  "studentName" : "New name",
+  "message" : null,
+  "averageScore" : null,
+  "subjects" : [ {
+    "name" : "Matemática",
+    "score" : 8.0
+  } ]
+}, {
+  "id" : 1,
+  "studentName" : "Marcos",
+  "message" : null,
+  "averageScore" : null,
+  "subjects" : [ {
+    "name" : "Matemática",
+    "score" : 8.0
+  } ]
+} ]

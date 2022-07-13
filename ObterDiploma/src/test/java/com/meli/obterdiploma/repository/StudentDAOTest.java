@@ -12,16 +12,16 @@ class StudentDAOTest {
 
     private IStudentDAO studentDAO;
 
-    @AfterAll
-    public static void tearDown() {
-        TestUtilsGenerator.emptyUsersFile();
-    }
+//    @AfterAll\
+//    public static void tearDown() {
+//        TestUtilsGenerator.emptyUsersFile();
+//    }
 
 
     @BeforeEach
     void setup() {
-        studentDAO = new StudentDAO();
         TestUtilsGenerator.emptyUsersFile();
+        studentDAO = new StudentDAO();
     }
 
     @Test
@@ -67,7 +67,24 @@ class StudentDAOTest {
     }
 
     @Test
-    void delete() {
+    void delete_removeStudent_whenStudentExist() {
+        StudentDTO newStudent = TestUtilsGenerator.getNewStudentWithOneSubject();
+        StudentDTO savedStudent = studentDAO.save(newStudent);
+
+        studentDAO.delete(savedStudent.getId());
+        assertThat(studentDAO.exists(savedStudent)).isFalse();
+    }
+
+    @Test
+    void delete_throwsExcetpion_whenStudentNotExist() {
+        StudentDTO student = TestUtilsGenerator.getStudentWithId();
+
+        StudentNotFoundException exception = Assertions.assertThrows(StudentNotFoundException.class, () -> {
+            studentDAO.delete(student.getId());
+        });
+
+        assertThat(exception.getError().getDescription()).contains(student.getId().toString());
+        assertThat(exception.getStatus()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
     @Test
