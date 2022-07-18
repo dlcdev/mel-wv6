@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Repository
-public class RomanNumbersRepo {
+public class RomanNumbersRepo implements RomanNumbersInterface{
 
     private final String linkFile = "src/main/resources/data_roman.json";
     private static List<RomanNumbers> listNumbers = null;
@@ -25,12 +25,14 @@ public class RomanNumbersRepo {
         return listNumbers;
     }
 
-    public List<RomanNumbers> getRomanNumberByDecimalNumber() {
-        try {
-            listNumbers = Arrays.asList(mapper.readValue(new File(linkFile), RomanNumbers[].class));
-        } catch (Exception ex) {
 
-        }
-        return listNumbers;
-    }
+
+//    public List<RomanNumbers> getRomanNumberByDecimalNumber() {
+//        try {
+//            listNumbers = Arrays.asList(mapper.readValue(new File(linkFile), RomanNumbers[].class));
+//        } catch (Exception ex) {
+//
+//        }
+//        return listNumbers;
+//    }
 }
