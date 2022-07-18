@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 public class RomanNumbersServiceImpl implements RomanNumbersService {
     @Autowired
     private RomanNumbersRepo repo;
+
     @Override
     public List<RomanNumbers> getAllRomanNumbers() {
 
@@ -20,11 +21,11 @@ public class RomanNumbersServiceImpl implements RomanNumbersService {
     }
 
     @Override
-    public List<String> getRomanNumberByDecimalNumber(int decimalNumber) {
+    public String getRomanNumberByDecimalNumber(int decimalNumber) {
         List<RomanNumbers> romanNumbersList = repo.getRomanNumberByDecimalNumber();
+
         return romanNumbersList.stream()
                 .filter(d -> d.getDecimalNumber() == decimalNumber)
-                .map(r -> r.getRomanNumber())
-                .collect(Collectors.toList());
+                .map(r -> r.getRomanNumber()).collect(Collectors.toList()).get(0);
     }
 }

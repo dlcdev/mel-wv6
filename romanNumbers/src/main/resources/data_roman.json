@@ -20,8 +20,20 @@
     "romanNumber": "V"
   },
   {
+    "decimalNumber": 6,
+    "romanNumber": "VI"
+  },
+  {
     "decimalNumber": 7,
     "romanNumber": "VII"
+  },
+  {
+    "decimalNumber": 8,
+    "romanNumber": "VIII"
+  },
+  {
+    "decimalNumber": 9,
+    "romanNumber": "IV"
   },
   {
     "decimalNumber": 10,

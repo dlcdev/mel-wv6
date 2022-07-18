@@ -12,25 +12,20 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/roman")
+@RequestMapping("/api/v1")
 public class RomanNumbersController {
 
     @Autowired
     private RomanNumbersService service;
 
-    @GetMapping
-    public String sayHello() {
-        return "hello";
-    }
-
-    @GetMapping("/all")
+    @GetMapping("/roman")
     public ResponseEntity<java.util.List<RomanNumbers>> getAllRomanNumbers() {
         List<RomanNumbers> listRomanNumbers = service.getAllRomanNumbers();
         return ResponseEntity.ok(listRomanNumbers);
     }
 
-    @GetMapping("/bydecimal/{decimalNumber}")
-    public ResponseEntity<java.util.List<String>> getRomanNumberByDecimalNumber(@PathVariable int decimalNumber) {
+    @GetMapping("/roman/{decimalNumber}")
+    public ResponseEntity getRomanNumberByDecimalNumber(@PathVariable int decimalNumber) {
         return ResponseEntity.ok().body(service.getRomanNumberByDecimalNumber(decimalNumber));
     }
 

@@ -7,5 +7,5 @@ import java.util.List;
 public interface RomanNumbersService {
     List<RomanNumbers> getAllRomanNumbers();
 
-    List<String> getRomanNumberByDecimalNumber(int decimalNumber);
+    String getRomanNumberByDecimalNumber(int decimalNumber);
 }
