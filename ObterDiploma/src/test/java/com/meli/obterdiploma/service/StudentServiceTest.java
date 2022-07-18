@@ -3,6 +3,7 @@ package com.meli.obterdiploma.service;
 import com.meli.obterdiploma.model.StudentDTO;
 import com.meli.obterdiploma.repository.StudentDAO;
 import com.meli.obterdiploma.util.TestUtilsGenerator;
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,6 +22,7 @@ import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
+@Log4j2
 class StudentServiceTest {
 
     @InjectMocks
@@ -91,12 +93,12 @@ class StudentServiceTest {
         verify(studentDAO, atLeastOnce()).save(updatedStudent);
     }
 
-//    @Test
-//    void getAll() {
-//        StudentDTO studentDTO = TestUtilsGenerator.getNewStudentWithOneSubject();
-//        StudentDTO studentFound = (StudentDTO) service.getAll();
-//
-//        assertThat(studentFound.getClass()).isEqualTo(studentDTO.getClass());
-//
-//    }
+    @Test
+    void getAll() {
+        StudentDTO studentDTO = TestUtilsGenerator.getNewStudentWithOneSubject();
+        log.info("Name Student: " + studentDTO.getStudentName());
+
+        assertThat(studentDTO).isNotNull();
+
+    }
 }
