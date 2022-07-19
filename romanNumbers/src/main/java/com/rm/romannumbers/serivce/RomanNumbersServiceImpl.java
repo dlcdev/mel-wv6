@@ -15,9 +15,7 @@ public class RomanNumbersServiceImpl implements RomanNumbersService {
 
     @Override
     public List<RomanNumbers> getAllRomanNumbers() {
-
-        List<RomanNumbers> listNumbers = repo.getAllRomanNumbers();
-        return listNumbers;
+        return repo.getAllRomanNumbers();
     }
 
     @Override

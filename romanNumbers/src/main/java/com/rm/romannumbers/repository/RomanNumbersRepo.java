@@ -24,15 +24,4 @@ public class RomanNumbersRepo implements RomanNumbersInterface{
         }
         return listNumbers;
     }
-
-
-
-//    public List<RomanNumbers> getRomanNumberByDecimalNumber() {
-//        try {
-//            listNumbers = Arrays.asList(mapper.readValue(new File(linkFile), RomanNumbers[].class));
-//        } catch (Exception ex) {
-//
-//        }
-//        return listNumbers;
-//    }
 }

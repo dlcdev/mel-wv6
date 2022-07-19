@@ -1,5 +1,7 @@
+use bd_meli01
+
 -- Mostrar todos os registros da tabela de filmes.
-select * from movies
+select * from movies_db;
 
 -- Mostrar o nome, sobrenome e classificação de todos os atores.
 

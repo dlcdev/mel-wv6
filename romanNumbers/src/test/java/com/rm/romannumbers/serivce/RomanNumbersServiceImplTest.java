@@ -1,5 +1,6 @@
 package com.rm.romannumbers.serivce;
 
+import com.rm.romannumbers.model.RomanNumbers;
 import com.rm.romannumbers.repository.RomanNumbersInterface;
 import com.rm.romannumbers.utils.TestGenerator;
 import lombok.extern.log4j.Log4j2;
@@ -12,6 +13,11 @@ import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.verify;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -32,6 +38,8 @@ class RomanNumbersServiceImplTest {
     }
 
 
+
+
     @ParameterizedTest(name = "[{index}] ==> the decimal number: ''{0}'' is equals to roman number: ''{1}''")
     @CsvSource({
             "1, I",
@@ -41,7 +49,6 @@ class RomanNumbersServiceImplTest {
             "7, VII",
             "10, X",
             "50, L"
-
     })
     void getRomanNumberByDecimalNumber(int inputDecimal, String expectedResult) {
 
@@ -50,4 +57,14 @@ class RomanNumbersServiceImplTest {
         assertThat(romanNumbers).isEqualTo(expectedResult);
     }
 
+    @Test
+    void getAllRomanNumbers() {
+
+        int expectedSize = 7;
+        List<RomanNumbers> romanNumbersList = service.getAllRomanNumbers();
+        assertThat(romanNumbersList.size()).isEqualTo(expectedSize);
+        assertThat(romanNumbersList).isNotNull();
+        verify(romanNumbersRepo, atLeastOnce()).getAllRomanNumbers();
+
+    }
 }
