@@ -58,6 +58,18 @@ order by max(s2.number);
 -- 4. Mostrar o nome de todos os gêneros e o número total de filmes de cada um,
 -- desde que seja maior ou igal a 3.
 
-select g.name, sum(m.title) from genres g
-    inner join movies m on g.id = m.id
-group by g.name, m.title
+select g.name, count(*) as 'Total de filmes'
+from genres g
+         inner join movies m on g.id = m.genre_id
+group by g.id
+order by `Total de filmes` desc
+limit 3;
+
+-- Mostrar apenas o nome e sobrenome dos atores que atuam em todos os filmes
+-- Star Wars
+
+select distinct a.first_name, a.last_name, m.title
+from actors a
+        inner join actor_movie am on a.id = am.actor_id
+        inner join movies m on a.favorite_movie_id = m.id
+where m.title = 'Harry Potter y la cámara de los secretos'
