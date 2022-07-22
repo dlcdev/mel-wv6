@@ -218,20 +218,30 @@ from Livro
 where editora in ('salamandra');
 
 -- 7. Listar os dados dos alunos cuja idade é maior que a média.
-select nome, sobre_nome, avg(idade) Media
+select avg(idade) Media
+from Aluno;
+
+select nome, sobre_nome, idade
 from Aluno
-group by nome, sobre_nome, idade;
+where idade > (select avg(idade) from Aluno);
 
 
 
 select *
-from aluno/;
+from aluno;;
 
 -- 8. Listar os nomes dos alunos cujo sobrenome começa com a letra G.
 select nome, sobre_nome
 from Aluno
-
 where sobre_nome like ('g%')
+
+-- 9 Listar os autores do livro "O Universo: Guia de Viagem".
+-- Apenas novmes devem ser listados
+
+select * from Livro
+inner join LivroAutor LA on Livro.id_livro = LA.Livro_id_livro
+inner join Autor A on LA.Autor_idAutor = A.idAutor
+where titulo like('Scan for MARC')
 
 
 
