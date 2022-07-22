@@ -186,30 +186,53 @@
 
 -- 1. Listar os dados dos autores
 
-select * from autor;
+select *
+from autor;
 
 -- 2. Listar nome e didade dos alunos
 
-select nome, idade from aluno;
+select nome, idade
+from aluno;
 
 -- 3. Quais alunos pertencem à carreira de informática
 
-select * from aluno
+select *
+from aluno
 where carreira = 'ciência da computação';
 
 -- 4. Quais autores são de nacionalidade francesa ou italiana
-select * from Autor
-where nacionalidade in ('francesa', 'italiana') ;
+select *
+from Autor
+where nacionalidade in ('francesa', 'italiana');
 
 -- 5. Que livros não são da área da internet
 
-select * from livro
-where area not like('internet');
+select *
+from livro
+where area not like ('internet');
 
 
 -- 6. Listar os livros da editora Salamadra.
-select * from Livro
+select *
+from Livro
 where editora in ('salamandra');
+
+-- 7. Listar os dados dos alunos cuja idade é maior que a média.
+select nome, sobre_nome, avg(idade) Media
+from Aluno
+group by nome, sobre_nome, idade;
+
+
+
+select *
+from aluno/;
+
+-- 8. Listar os nomes dos alunos cujo sobrenome começa com a letra G.
+select nome, sobre_nome
+from Aluno
+
+where sobre_nome like ('g%')
+
 
 
 

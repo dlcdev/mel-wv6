@@ -7,13 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/user")
+@ControllerAdvice
 public class UserBdController {
 
     @Autowired
@@ -21,13 +21,14 @@ public class UserBdController {
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDB> buscaPorId(@PathVariable long id) {
-        Optional<UserDB> userFound = service.getUserById(id);
-
-        if (!userFound.isEmpty() ){
-            return ResponseEntity.ok(userFound.get());
-        }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(service.getUserById(id));
     }
+
+    @GetMapping("/email/{email}")
+    public ResponseEntity<UserDB> buscaPorEmail(@PathVariable String email) {
+        return ResponseEntity.ok(service.findByEmail(email));
+    }
+
 
     @PostMapping
     public ResponseEntity<UserDB> insertNewUser(@RequestBody UserDB user) {
@@ -38,14 +39,11 @@ public class UserBdController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteUser(@PathVariable long id){
-        Optional<UserDB> userFound = service.getUserById(id);
+    public ResponseEntity deleteUser(@PathVariable long id) {
 
-        if(userFound.isPresent()){
-            service.deleteUser(id);
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+        service.deleteUser(id);
+        return ResponseEntity.noContent().build();
+
     }
 
     @GetMapping
@@ -53,6 +51,14 @@ public class UserBdController {
         return ResponseEntity.ok(service.listAll());
     }
 
+    @PutMapping
+    public ResponseEntity<UserDB> updateUser(@RequestBody UserDB userDB) {
+        return ResponseEntity.ok(service.update(userDB));
+    }
 
+    @PatchMapping("/{id}")
+    public ResponseEntity<UserDB> updatePartial(@PathVariable long id, @RequestBody Map<String, String> changes) {
+        return ResponseEntity.ok(service.updatePartial(id, changes));
+    }
 
 }
