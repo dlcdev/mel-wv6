@@ -20,7 +20,7 @@ public class Address
     private String location;
 
     @OneToOne
-    @JoinColumn(name = "id_author")
+    @JoinColumn(name = "id_author") // indica que sera a chave estrangeira
     private Author author;
 
 

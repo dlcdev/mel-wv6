@@ -6,9 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 public class Author {
 
@@ -19,7 +22,18 @@ public class Author {
     @Column(nullable = false)
     private String name;
 
-    @OneToOne(mappedBy = "author") // author = name do campo na tabela Address que é usada como referencia
+    @OneToOne(mappedBy = "author", cascade = CascadeType.PERSIST)
+    // author = name do campo na tabela Address que é usada como referencia
     @JsonIgnoreProperties("author") // ao prencher os dados do Address, não graga os dados do author
     private Address address;
+
+    @ManyToMany
+    @JoinTable(name = "book_author" // nome da tabela de ligacao
+            , joinColumns = @JoinColumn(name = "author_id", referencedColumnName = "id"),
+            // atributo do author na tabela de ligação
+            inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id")
+            // atributo do livro na tabela de ligação
+    )
+    @JsonIgnoreProperties("authors")
+    private Set<Book> books;
 }
