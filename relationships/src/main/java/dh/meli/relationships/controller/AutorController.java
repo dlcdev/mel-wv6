@@ -3,7 +3,7 @@ package dh.meli.relationships.controller;
 import dh.meli.relationships.dto.AuthorDto;
 import dh.meli.relationships.model.Author;
 import dh.meli.relationships.repository.AuthorRepo;
-import dh.meli.relationships.service.AuthorService;
+import dh.meli.relationships.repository.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

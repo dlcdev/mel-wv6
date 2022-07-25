@@ -1,4 +1,4 @@
-package dh.meli.relationships.service;
+package dh.meli.relationships.repository.service;
 
 import dh.meli.relationships.model.Author;
 import dh.meli.relationships.repository.AuthorRepo;
