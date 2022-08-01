@@ -24,7 +24,7 @@ public class Author {
 
     @OneToOne(mappedBy = "author", cascade = CascadeType.PERSIST)
     // author = name do campo na tabela Address que é usada como referencia
-    @JsonIgnoreProperties("author") // ao prencher os dados do Address, não graga os dados do author
+    @JsonIgnoreProperties("author") // ao prencher os dados do Address, não agrega os dados do author
     private Address address;
 
     @ManyToMany
