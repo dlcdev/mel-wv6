@@ -1,5 +1,6 @@
 package com.dh.meli.funcionario.service;
 
+import com.dh.meli.funcionario.exception.InvalidEmployeeParam;
 import com.dh.meli.funcionario.model.Funcionario;
 import com.dh.meli.funcionario.repository.FuncionarioRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class FuncionarioService implements IFuncionarioService {
 
     @Override
     public Funcionario saveNewEmployee(Funcionario newFuncionario) {
+        if(newFuncionario == null || newFuncionario.getId() != 0){
+            throw new InvalidEmployeeParam("Employee cannot be null or have id defined!");
+        }
         return repo.save(newFuncionario);
     }
 
